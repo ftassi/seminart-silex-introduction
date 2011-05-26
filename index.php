@@ -12,6 +12,7 @@ $app->register(new Silex\Extension\TwigExtension(), array(
 ));
 
 $app->before(function() use ($app){
+  $app['twig']->addGlobal('vendor_layout', $app['twig']->loadTemplate('vendor_layout.twig'));
   $app['twig']->addGlobal('layout', $app['twig']->loadTemplate('layout.twig'));
 });
 
